@@ -71,7 +71,7 @@ public class Methods
         int adjDay;
         if(dayOfYear < 79)
         {
-            adjDay = dayOfYear + 287;
+            adjDay = dayOfYear + 286;
         }
         else
         {
@@ -99,7 +99,7 @@ public class Methods
             yearAmnt++;
         }
         
-        return (int)(((double)(dayOfYear) / (double)(yearAmnt)) * 112);
+        return (int)(Math.ceil((double)((double)(dayOfYear) / (double)(yearAmnt)) * 112));
     }
     
     public int sdMonthInt(int convertedDate) //finds out which Stardew season Stardew day of year is
