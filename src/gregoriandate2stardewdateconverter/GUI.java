@@ -5,6 +5,8 @@
  */
 package gregoriandate2stardewdateconverter;
 
+import javax.swing.DefaultComboBoxModel;
+
 /**
  *
  * @author Jason
@@ -151,7 +153,18 @@ public class GUI extends javax.swing.JFrame
 
     private void jMonthComboBoxActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jMonthComboBoxActionPerformed
     {//GEN-HEADEREND:event_jMonthComboBoxActionPerformed
-        // TODO add your handling code here:
+        if( jMonthComboBox.getSelectedItem().toString().equals("February"))
+        {
+            jDayComboBox.setModel(mon29);
+        }
+        else if(jMonthComboBox.getSelectedItem().toString().equals("April") || jMonthComboBox.getSelectedItem().toString().equals("June") || jMonthComboBox.getSelectedItem().toString().equals("September") || jMonthComboBox.getSelectedItem().toString().equals("November"))
+        {
+            jDayComboBox.setModel(mon30);
+        }
+        else
+        {
+            jDayComboBox.setModel(mon31);
+        }
     }//GEN-LAST:event_jMonthComboBoxActionPerformed
 
     private void jYearFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jYearFieldActionPerformed
@@ -266,6 +279,12 @@ public class GUI extends javax.swing.JFrame
         });
     }
     Methods main = new Methods();
+    String[] arr29 = new String[]{"1", "2", "3" ,"4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29"};
+    String[] arr30 = new String[]{"1", "2", "3" ,"4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"};
+    String[] arr31 = new String[]{"1", "2", "3" ,"4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"};
+    DefaultComboBoxModel mon29 = new DefaultComboBoxModel( arr29 );
+    DefaultComboBoxModel mon30 = new DefaultComboBoxModel( arr30 );
+    DefaultComboBoxModel mon31 = new DefaultComboBoxModel( arr31 );
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jConvertButton;
     private javax.swing.JComboBox<String> jDayComboBox;
